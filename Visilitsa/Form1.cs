@@ -27,6 +27,8 @@ namespace Visilitsa
             for (int i = 0; i < str.Count(); i++)//создание цикла
             {
                 Button button = new Button();//метод создания новой кнопки
+                button.Name = "letterbutton" + i;
+                button.Enabled = false;
                 button.BackColor = Color.White;//цвет кнопки
                 button.Text = str[i] + "";//присваивает значение след.буквы
                 button.Click += new EventHandler(this.button_Click);
@@ -40,7 +42,6 @@ namespace Visilitsa
                     posY += button.Height;//высота кнопки
                 }
             }
-            label1.Text = "* * * * * *";
             label2.Text = word;
 
 
@@ -105,10 +106,40 @@ namespace Visilitsa
                             pictureBox1.BackgroundImage = Properties.Resources.stage5;
                             break;
                         }
+                    case 6:
+                        {
+                            pictureBox1.BackgroundImage = Properties.Resources.stage6;
+                            break;
+                        }
+                    case 7:
+                        {
+                            pictureBox1.BackgroundImage = Properties.Resources.stage7;
+                            break;
+                        }
+                    case 8:
+                        {
+                            pictureBox1.BackgroundImage = Properties.Resources.stage8;
+                            gameover();
+                            break;
+                        }
                 }
 
             }
             letter_btn.Enabled = false;
+        }
+
+        private void gameover()
+        {
+            MessageBox.Show("Game Over");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "* * * * * *";
+            for (int i =0; i<32; i++)
+            {
+                (Controls["letterbutton" + i] as Button).Enabled = true;
+            }
         }
     }
 }
