@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Visilitsa
 {
     public partial class Form1 : Form
     {
-        string word = "НИКИТА";
+        string word = "";
         int life = 0;
+        int currentcount = 0;
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +44,6 @@ namespace Visilitsa
                     posY += button.Height;//высота кнопки
                 }
             }
-            label2.Text = word;
 
 
         }
@@ -59,19 +60,20 @@ namespace Visilitsa
                     if (i == 0)
                     {
                     
-                        label2.Text = guessedLetter;
                         string temp = label1.Text.Remove(0, 1);
 
-                        string ins = temp.Insert(0, guessedLetter);
-                        label1.Text = ins;
+                        temp = temp.Insert(0, guessedLetter);
+                        label1.Text = temp;
+                        currentcount++;
                     }
                     else
                     {
 
                         string temp = label1.Text.Remove(2*i, 1);
 
-                        string ins = temp.Insert(2 * i , guessedLetter);
-                        label1.Text = ins;
+                        temp = temp.Insert(2 * i , guessedLetter);
+                        label1.Text = temp;
+                        currentcount++;
                     }
                 }
              }
@@ -125,17 +127,49 @@ namespace Visilitsa
                 }
 
             }
+            if (currentcount == word.Length)
+            {
+                for (int i = 0; i < 32; i++)
+                {
+                    (Controls["letterbutton" + i] as Button).Enabled = false;
+                }
+                MessageBox.Show("WIN");
+            }
             letter_btn.Enabled = false;
         }
 
         private void gameover()
         {
             MessageBox.Show("Game Over");
+            for (int i = 0; i < 32; i++)
+            {
+                (Controls["letterbutton" + i] as Button).Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "* * * * * *";
+            Random rnd = new Random();
+            int value = rnd.Next(0, 3);
+            StreamReader sr = new StreamReader("words.txt");
+            int j = 0;
+            while (!sr.EndOfStream && j != value)
+            {
+                word = sr.ReadLine();
+                j++;
+            }
+            sr.Close();
+
+            life = 0;
+            currentcount = 0;
+            Graphics g = pictureBox1.CreateGraphics();
+            label1.Text = "";
+            g.Clear(Color.White);
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                label1.Text += "* ";
+            }
             for (int i =0; i<32; i++)
             {
                 (Controls["letterbutton" + i] as Button).Enabled = true;
