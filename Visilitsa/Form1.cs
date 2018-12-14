@@ -31,9 +31,11 @@ namespace Visilitsa
                 Button button = new Button();//метод создания новой кнопки
                 button.Name = "letterbutton" + i;
                 button.Enabled = false;
-                button.BackColor = Color.White;//цвет кнопки
+                button.BackColor = Color.Transparent;//цвет кнопки
+                
                 button.Text = str[i] + "";//присваивает значение след.буквы
                 button.Click += new EventHandler(this.button_Click);
+                button.Font = new Font("Mistral", 14); 
                 button.Location = new System.Drawing.Point(posX, posY);//рисование кнопки
                 button.Size = new System.Drawing.Size(30, 25);//задание размера кнопки
                 this.Controls.Add(button);//добавление кнопки
@@ -140,7 +142,7 @@ namespace Visilitsa
 
         private void gameover()
         {
-            MessageBox.Show("Game Over");
+            pictureBox1.BackgroundImage = Properties.Resources.lose;
             for (int i = 0; i < 32; i++)
             {
                 (Controls["letterbutton" + i] as Button).Enabled = false;
@@ -149,31 +151,38 @@ namespace Visilitsa
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pictureBox1.BackgroundImage = Properties.Resources.start;
             Random rnd = new Random();
             int value = rnd.Next(0, 3);
-            StreamReader sr = new StreamReader("words.txt");
-            int j = 0;
-            while (!sr.EndOfStream && j != value)
+            try
             {
-                word = sr.ReadLine();
-                j++;
-            }
-            sr.Close();
+                StreamReader sr = new StreamReader("words.txt");
+                int j = 0;
 
-            life = 0;
-            currentcount = 0;
-            Graphics g = pictureBox1.CreateGraphics();
-            label1.Text = "";
-            g.Clear(Color.White);
+                while (!sr.EndOfStream && j != value)
+                {
+                    word = sr.ReadLine();
+                    j++;
+                }
+                sr.Close();
+                life = 0;
+                currentcount = 0;
+                label1.Text = "";
 
-            for (int i = 0; i < word.Length; i++)
-            {
-                label1.Text += "* ";
+                for (int i = 0; i < word.Length; i++)
+                {
+                    label1.Text += "* ";
+                }
+                for (int i = 0; i < 32; i++)
+                {
+                    (Controls["letterbutton" + i] as Button).Enabled = true;
+                }
             }
-            for (int i =0; i<32; i++)
+            catch 
             {
-                (Controls["letterbutton" + i] as Button).Enabled = true;
+                MessageBox.Show("Файла нет!");
             }
+ 
         }
     }
 }
