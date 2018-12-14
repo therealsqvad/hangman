@@ -135,7 +135,8 @@ namespace Visilitsa
                 {
                     (Controls["letterbutton" + i] as Button).Enabled = false;
                 }
-                MessageBox.Show("WIN");
+                pictureBox1.BackgroundImage = Properties.Resources.win;
+
             }
             letter_btn.Enabled = false;
         }

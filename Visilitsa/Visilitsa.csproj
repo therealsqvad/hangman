@@ -80,6 +80,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\win.png" />
     <None Include="Resources\start.png" />
     <None Include="Resources\background.jpg" />
     <None Include="Resources\lose.png" />
