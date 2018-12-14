@@ -41,9 +41,8 @@
             this.label1.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(47, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 35);
+            this.label1.Size = new System.Drawing.Size(0, 35);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -65,7 +64,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 43);
             this.button1.TabIndex = 2;
-            this.button1.Text = "New Game";
+            this.button1.Text = "Новая игра";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -81,6 +80,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_Closed);
             this.Shown += new System.EventHandler(this.Game_Shown);

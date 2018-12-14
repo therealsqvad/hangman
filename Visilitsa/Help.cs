@@ -22,9 +22,15 @@ namespace Visilitsa
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form ifrm = new Game();
+            ifrm.Show(); 
+            this.Hide();
+        }
+
+        private void Help_Closed(object sender, FormClosedEventArgs e)
+        {
             Form ifrm = new Menu();
-            ifrm.Show(); // отображаем Form2
-            this.Hide(); // скрываем Form1 (this - текущая форма)
+            ifrm.Show();
         }
     }
 }
