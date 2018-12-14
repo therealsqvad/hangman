@@ -11,17 +11,17 @@ using System.IO;
 
 namespace Visilitsa
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         string word = "";
         int life = 0;
         int currentcount = 0;
-        public Form1()
+        public Game()
         {
             InitializeComponent();
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        private void Game_Shown(object sender, EventArgs e)
         {
             //this.Size = new Size(500, 500);
             string str = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";//строковая перем. с алфавитом
@@ -154,7 +154,7 @@ namespace Visilitsa
         {
             pictureBox1.BackgroundImage = Properties.Resources.start;
             Random rnd = new Random();
-            int value = rnd.Next(0, 3);
+            int value = rnd.Next(0, 45);
             try
             {
                 StreamReader sr = new StreamReader("words.txt");
@@ -184,6 +184,11 @@ namespace Visilitsa
                 MessageBox.Show("Файла нет!");
             }
  
+        }
+
+        private void Game_Closed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
