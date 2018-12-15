@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.start_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,18 +58,18 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // start_button
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(388, 445);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 43);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Начать игру";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.start_button.BackColor = System.Drawing.Color.Transparent;
+            this.start_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.start_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.start_button.Location = new System.Drawing.Point(388, 445);
+            this.start_button.Name = "start_button";
+            this.start_button.Size = new System.Drawing.Size(177, 43);
+            this.start_button.TabIndex = 2;
+            this.start_button.Text = "Начать игру";
+            this.start_button.UseVisualStyleBackColor = false;
+            this.start_button.Click += new System.EventHandler(this.Start_Button_Click);
             // 
             // label2
             // 
@@ -89,7 +89,7 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 499);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.start_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -108,7 +108,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button start_button;
         private System.Windows.Forms.Label label2;
     }
 }

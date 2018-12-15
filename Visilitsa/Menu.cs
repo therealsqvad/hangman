@@ -18,16 +18,14 @@ namespace Visilitsa
             InitializeComponent();
         }
 
-       
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Start_Button_Click(object sender, EventArgs e)
         {
             Form ifrm = new Game();
             ifrm.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Help_Button_Click(object sender, EventArgs e)
         {
             Form ifrm = new Help();
             ifrm.Show();

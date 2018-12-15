@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label_for_word = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.new_game_button = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // label_for_word
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(47, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 35);
-            this.label1.TabIndex = 0;
+            this.label_for_word.AutoSize = true;
+            this.label_for_word.BackColor = System.Drawing.Color.Transparent;
+            this.label_for_word.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_for_word.Location = new System.Drawing.Point(47, 19);
+            this.label_for_word.Name = "label_for_word";
+            this.label_for_word.Size = new System.Drawing.Size(0, 35);
+            this.label_for_word.TabIndex = 0;
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Visilitsa.Properties.Resources.start;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(500, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(325, 363);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.BackgroundImage = global::Visilitsa.Properties.Resources.start;
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox.Location = new System.Drawing.Point(500, 53);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(325, 363);
+            this.pictureBox.TabIndex = 1;
+            this.pictureBox.TabStop = false;
             // 
-            // button1
+            // new_game_button
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(289, 347);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 43);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Новая игра";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.new_game_button.BackColor = System.Drawing.Color.Transparent;
+            this.new_game_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.new_game_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.new_game_button.Location = new System.Drawing.Point(289, 347);
+            this.new_game_button.Name = "new_game_button";
+            this.new_game_button.Size = new System.Drawing.Size(177, 43);
+            this.new_game_button.TabIndex = 2;
+            this.new_game_button.Text = "Новая игра";
+            this.new_game_button.UseVisualStyleBackColor = false;
+            this.new_game_button.Click += new System.EventHandler(this.New_Game_Button_Click);
             // 
             // Game
             // 
@@ -75,16 +75,16 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 428);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.new_game_button);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.label_for_word);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_Closed);
             this.Shown += new System.EventHandler(this.Game_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +92,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_for_word;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button new_game_button;
     }
 }
 

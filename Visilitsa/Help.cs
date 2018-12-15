@@ -18,19 +18,17 @@ namespace Visilitsa
             InitializeComponent();
         }
 
-       
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form ifrm = new Game();
-            ifrm.Show(); 
-            this.Hide();
-        }
-
-        private void Help_Closed(object sender, FormClosedEventArgs e)
+        private void Help_Closed(object sender, FormClosedEventArgs e) // событие закрытия формы, то есть если ты нажмешь крестик в правилах, то откроется меню
         {
             Form ifrm = new Menu();
             ifrm.Show();
+        }
+
+        private void Start_Button_Click(object sender, EventArgs e)
+        {
+            Form ifrm = new Game(); // создаем форму Game, необходимо для того, чтобы её отобразить
+            ifrm.Show();  // показываем форму Game
+            this.Hide(); // скрываем текущую, чтобы не получилось 2 окна
         }
     }
 }

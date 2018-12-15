@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.start_button = new System.Windows.Forms.Button();
+            this.help_button = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // logo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Visilitsa.Properties.Resources.start;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(230, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(325, 363);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.BackgroundImage = global::Visilitsa.Properties.Resources.start;
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.logo.Location = new System.Drawing.Point(230, 32);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(325, 363);
+            this.logo.TabIndex = 1;
+            this.logo.TabStop = false;
             // 
-            // button1
+            // start_button
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(42, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Начать игру";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.start_button.BackColor = System.Drawing.Color.Transparent;
+            this.start_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.start_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.start_button.Location = new System.Drawing.Point(42, 34);
+            this.start_button.Name = "start_button";
+            this.start_button.Size = new System.Drawing.Size(177, 45);
+            this.start_button.TabIndex = 2;
+            this.start_button.Text = "Начать игру";
+            this.start_button.UseVisualStyleBackColor = false;
+            this.start_button.Click += new System.EventHandler(this.Start_Button_Click);
             // 
-            // button2
+            // help_button
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(42, 100);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 45);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Правила";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.help_button.BackColor = System.Drawing.Color.Transparent;
+            this.help_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.help_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.help_button.Location = new System.Drawing.Point(42, 100);
+            this.help_button.Name = "help_button";
+            this.help_button.Size = new System.Drawing.Size(177, 45);
+            this.help_button.TabIndex = 2;
+            this.help_button.Text = "Правила";
+            this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.Help_Button_Click);
             // 
             // Menu
             // 
@@ -78,22 +78,22 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(561, 428);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.help_button);
+            this.Controls.Add(this.start_button);
+            this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Button start_button;
+        private System.Windows.Forms.Button help_button;
     }
 }
 
