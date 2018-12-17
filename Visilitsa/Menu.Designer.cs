@@ -31,6 +31,7 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.start_button = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
+            this.DictEdit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,19 @@
             this.help_button.UseVisualStyleBackColor = false;
             this.help_button.Click += new System.EventHandler(this.Help_Button_Click);
             // 
+            // DictEdit_button
+            // 
+            this.DictEdit_button.BackColor = System.Drawing.Color.Transparent;
+            this.DictEdit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DictEdit_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DictEdit_button.Location = new System.Drawing.Point(42, 166);
+            this.DictEdit_button.Name = "DictEdit_button";
+            this.DictEdit_button.Size = new System.Drawing.Size(177, 45);
+            this.DictEdit_button.TabIndex = 2;
+            this.DictEdit_button.Text = "Редактор";
+            this.DictEdit_button.UseVisualStyleBackColor = false;
+            this.DictEdit_button.Click += new System.EventHandler(this.DictEdit_Button);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -78,6 +92,7 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(561, 428);
+            this.Controls.Add(this.DictEdit_button);
             this.Controls.Add(this.help_button);
             this.Controls.Add(this.start_button);
             this.Controls.Add(this.logo);
@@ -85,6 +100,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_Closed);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -94,6 +110,7 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button start_button;
         private System.Windows.Forms.Button help_button;
+        private System.Windows.Forms.Button DictEdit_button;
     }
 }
 
