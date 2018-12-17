@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Visilitsa
 {
@@ -18,25 +10,25 @@ namespace Visilitsa
             InitializeComponent();
         }
 
-        private void Start_Button_Click(object sender, EventArgs e)
+        private void Start_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Начать игру"
         {
             Form ifrm = new Game();
             ifrm.Show();
             this.Hide();
         }
 
-        private void Help_Button_Click(object sender, EventArgs e)
+        private void Help_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Правила"
         {
             Form ifrm = new Help();
             ifrm.Show();
         }
 
-        private void Menu_Closed(object sender, FormClosedEventArgs e)
+        private void Menu_Closed(object sender, FormClosedEventArgs e) // обработчик закрытия программы
         {
             Application.Exit();
         }
 
-        private void DictEdit_Button_Click(object sender, EventArgs e)
+        private void DictEdit_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Редактор"
         {
             Form ifrm = new DictEdit();
             ifrm.Show();

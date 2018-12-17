@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -13,62 +8,62 @@ namespace Visilitsa
 {
     public partial class Game : Form
     {
-        private string hidden_word = ""; // инициализация переменной под слово
-        private int stage = 0; // жизни, точнее этапы виселицы
-        private int input_length = 0; // количество введенных букв, для проверки на победу ( так как буквы в слове могут повторяться)
+        private string hidden_word = ""; // переменная, в которое будет храниться загаданное слово
+        private int stage = 0; // переменная, информирующая о текущем этапе виселицы
+        private int input_length = 0; // количество введенных букв, для проверки полностью введенного слова ( так как буквы в слове могут повторяться)
 
         public Game()
         {
             InitializeComponent();
         }
 
-        private void Game_Shown(object sender, EventArgs e)
+        private void Game_Shown(object sender, EventArgs e) // обработчик открытия формы Game
         {
-            string str = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"; // строковая перем. с алфавитом
+            string str = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"; // переменная, содержащая алфавит
             int posX = 20, posY = 135; // начальные позиции первой строки букв
-            for (int i = 0; i < str.Count(); i++) //создание цикла
+            for (int i = 0; i < str.Count(); i++)
             {
-                Button button = new Button // создание кнопки
+                Button button = new Button // добавление кнопок-букв на форму
                 {
-                    Name = "letterbutton" + i, // задаем название кнопки вида letterbutton1 .. letterbutton32 (кнопок будет 32, так как нет буквы ё)
-                    Enabled = false, // изначально кнопка неактивна, пока не запустишь игру
-                    BackColor = Color.Transparent, // цвет кнопки 
-                    Font = new Font("Mistral", 14), // шрифт
-                    Location = new System.Drawing.Point(posX, posY), // позиция кнопки
-                    Size = new System.Drawing.Size(30, 25), // задание размера кнопки
-                    Text = str[i] + ""//присваивает значение след.буквы
+                    Name = "letterbutton" + i, 
+                    Enabled = false, 
+                    BackColor = Color.Transparent,
+                    Font = new Font("Mistral", 14), 
+                    Location = new System.Drawing.Point(posX, posY),
+                    Size = new System.Drawing.Size(30, 25),
+                    Text = str[i] + ""
                 }; 
-                button.Click += new EventHandler(this.Letter_Button_Click); // связываем с методом button_click
-                this.Controls.Add(button); // добавление кнопки на форму
-                posX += button.Width + 3;// смещение позиции для следующей кнопки
+                button.Click += new EventHandler(this.Letter_Button_Click);
+                this.Controls.Add(button); 
+                posX += button.Width + 3;
                 if ((i + 1) % 8 == 0)
                 {
                     posX = 20;
-                    posY += button.Height + 3;//высота кнопки
+                    posY += button.Height + 3;
                 }
             }
 
 
         }
-        private void Letter_Button_Click(object sender, EventArgs e)
+        private void Letter_Button_Click(object sender, EventArgs e) // обработчик нажатия на кнопку-букву
         {
-            Button letter_btn = sender as Button; // получаем кнопку, которую нажали. то есть у нас один обработчик для всех кнопок и этой строчкой мы даем понять какая именно буква нажата
-            string guessed_letter = letter_btn.Text; // кладем в строковую переменную букву, которую нажали
-            bool is_find = false; // флаг найдено ли, нужен для того, чтобы понять найдена ли буква в слове вообще
-            for (int i = 0; i < hidden_word.Length; i++) // пробегаемся в цикле по слову
+            Button letter_btn = sender as Button; 
+            string guessed_letter = letter_btn.Text; 
+            bool is_find = false; 
+            for (int i = 0; i < hidden_word.Length; i++)
             {
-                if(hidden_word[i] == guessed_letter[0]) // сравниваем каждую букву слова с нажатой
+                if(hidden_word[i] == guessed_letter[0])
                 {
-                    is_find = true; // если нашли - меняем флажок
-                    input_length++; // количество введенных букв увеличиваем (чтобы потом понять, что слово отгадано полностью) 
-                    if (i == 0) // так как у нас в label выводится все в виде * * * чтобы понятно было количество букв, а не сливались звездочки , 1 буква будет на позиции 0
-                    {               // а вторая буква на позиции 2, поэтому мы нулевую позицию рассматриваем отдельно, а дальше 2*i
+                    is_find = true; 
+                    input_length++; 
+                    if (i == 0) 
+                    {           
                     
-                        string temp = label_for_word.Text.Remove(0, 1); // строковые переменные неизменяемые, поэтому мы не можем как в С++ сделать str[2] = "Y" чтобы поменять какую то букву в слове
-                        temp = temp.Insert(0, guessed_letter);  // нам необходимо удалить букву с позиции, а на эту позицию вставить новую букву, для этого создаем переменную temp
-                        label_for_word.Text = temp; // а уже измененную строку выводим на экран. типа нажали Л было  * * * -> удалили * добавили Л получили Л * * 
+                        string temp = label_for_word.Text.Remove(0, 1); 
+                        temp = temp.Insert(0, guessed_letter);  
+                        label_for_word.Text = temp;
                     }
-                    else // как писал выше , все то же самое, только для позиции 2*i (потому что между звездочками пробел)
+                    else
                     {
                         string temp = label_for_word.Text.Remove(2 * i, 1);
                         temp = temp.Insert(2 * i , guessed_letter);
@@ -76,10 +71,10 @@ namespace Visilitsa
                     }
                 }
              }
-            if (!is_find) // если не найдена буква в слове, то рисуется часть виселицы
+            if (!is_find)
             {
-                stage++; // увеличиваем этап так сказать
-                switch (stage) // через switch выбираем какое изображение вывести
+                stage++; 
+                switch (stage) 
                 {
 
                     case 1:
@@ -124,24 +119,24 @@ namespace Visilitsa
                         }
                     case 9:
                         {
-                            Gameover(); // если уже 9 стадия, то все, геймовер 
+                            Gameover(); 
                             break;
                         }
                 }
 
             }
-            if (input_length == hidden_word.Length) // если введенное количество достигло длины загаданного слова, то победа
+            if (input_length == hidden_word.Length)
             {
-                Disable_All_Buttons(); // все кнопки отключаем
-                pictureBox.BackgroundImage = Properties.Resources.win; // а изображение ставим победное
+                Disable_All_Buttons(); 
+                pictureBox.BackgroundImage = Properties.Resources.win; 
             }
-            letter_btn.Enabled = false; // "выключаем" нажатую кнопку, чтобы не нажимать её повторно
+            letter_btn.Enabled = false;
         }
 
-        private int Count_Words() // функция подсчета слов в файле
+        private int Count_Words() // функция подсчета слов в словаре
         {
             int count = 0;
-            StreamReader sr = new StreamReader("Dictionary.txt"); // ну это стандартное открытие файла в си#
+            StreamReader sr = new StreamReader("Dictionary.txt");
             while (!sr.EndOfStream) 
                 {
                     sr.ReadLine(); 
@@ -149,58 +144,58 @@ namespace Visilitsa
                 sr.Close(); 
             return count;
         }
-        private void New_Game_Button_Click(object sender, EventArgs e) // обработчик кнопки новая игра
+        private void New_Game_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Новая игра"
         {
-            pictureBox.BackgroundImage = Properties.Resources.start; // выводим лого , ну просто так
-            Random rnd = new Random(); // создаем генератор 
-            int value = rnd.Next(0, Count_Words()); // генерируем случайное число от 0 до количества строк в файле, это количество слов в словаре.
-            try // вот тут уже начинается интересное: try - это блок попытка, то есть программа попытается выполнить все это, но если например файла нет , или сгенерированное число больше 
-            {       // количества строк, то выбрасываем исключение
-                StreamReader sr = new StreamReader("Dictionary.txt"); // ну это стандартное открытие файла в си#
-                int j = 0; // текущая строка
-                while (!sr.EndOfStream && j != value) // пока не конец файла и не дошли до случайной строки - делаем цикл
+            pictureBox.BackgroundImage = Properties.Resources.start; 
+            Random rnd = new Random(); 
+            int value = rnd.Next(0, Count_Words()); 
+            try 
+            {     
+                StreamReader sr = new StreamReader("Dictionary.txt");
+                int j = 0; 
+                while (!sr.EndOfStream && j != value) 
                 {
-                    hidden_word = sr.ReadLine(); // читаем строку, а указатель переместится на следующую. на следующем шаге прочитаем вторую и тд
-                    j++; // итерируем число, чтобы достигнуть случайного
+                    hidden_word = sr.ReadLine();
+                    j++; 
                 }
-                sr.Close(); // ОБЯЗАТЕЛЬНО закрываем файл
-                stage = 0; // сбрасываем счетчик стадий
-                input_length = 0; // сбрасываем счетчик введенных букв
-                label_for_word.Text = ""; // очищаем лейбл под слово
+                sr.Close();
+                stage = 0; 
+                input_length = 0; 
+                label_for_word.Text = ""; 
 
                 for (int i = 0; i < hidden_word.Length; i++)
                 {
-                    label_for_word.Text += "* "; // выводи "* " по количеству букв в слове ) 
+                    label_for_word.Text += "* ";  
                 }
-                if (label_for_word.Text == "") // несколько раз замечал, что игра запускалась с пустым словом, не знаю как, но вот так, видимо из файла считывала пустую строку
+                if (label_for_word.Text == "") 
                 {
-                    New_Game_Button_Click(sender, e); // поэтому пересоздаем игру с теми же аргументами
+                    New_Game_Button_Click(sender, e);
                 }
-                Enable_All_Buttons(); // включаем все кнопки, чтобы можно было тыкать
+                Enable_All_Buttons();
             }
             catch 
             {
-                MessageBox.Show("Отсутствует словарь! Воспользуйтесь редактором"); // если файла нет, выбрасываем исключение, что файла нет . если останется время, сделаю, чтобы создавался тогда файл с 5 словами, например
+                MessageBox.Show("Отсутствует словарь! Воспользуйтесь редактором");
             }
  
         }
 
-        private void Game_Closed(object sender, FormClosedEventArgs e)
+        private void Game_Closed(object sender, FormClosedEventArgs e) // обработчик закрытия формы (выхода из игры)
         {
-            Application.Exit(); // это нужно для того, чтобы когда ты из игры нажмешь крестик - процесс завершился
+            Application.Exit(); 
         }
 
-        private void Disable_All_Buttons()
+        private void Disable_All_Buttons() // функция "отключения" кнопок-букв
         {
-            for (int i = 0; i < 32; i++) // перебираем все буквы и получается оставшиеся делаем неактивными , то есть чтобы нельзя было во время не игры тыкать кнопочки
+            for (int i = 0; i < 32; i++) 
             {
                 (Controls["letterbutton" + i] as Button).Enabled = false;
             }
         }
 
-        private void Enable_All_Buttons()
+        private void Enable_All_Buttons() // функция "включения" кнопок-букв
         {
-            for (int i = 0; i < 32; i++) // перебираем все буквы и делаем активными , то есть чтобы можно было во время игры тыкать кнопочки
+            for (int i = 0; i < 32; i++) 
             {
                 (Controls["letterbutton" + i] as Button).Enabled = true;
             }
@@ -208,22 +203,22 @@ namespace Visilitsa
 
         private void Gameover() // функция проигрыша
         {
-            pictureBox.BackgroundImage = Properties.Resources.lose; // устанавливаем изображение проигрыш
-            label_for_word.Text = hidden_word; // выводим исходное слово
-            Disable_All_Buttons(); // отключаем кнопочки
+            pictureBox.BackgroundImage = Properties.Resources.lose;
+            label_for_word.Text = hidden_word; 
+            Disable_All_Buttons(); 
         }
 
-        private void Menu_Button_Click(object sender, EventArgs e)
+        private void Menu_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Меню"
         {
-            Form ifrm = new Menu(); // создаем форму Game, необходимо для того, чтобы её отобразить
-            ifrm.Show();  // показываем форму Game
-            this.Hide(); // скрываем текущую, чтобы не получилось 2 окна
+            Form ifrm = new Menu(); 
+            ifrm.Show();  
+            this.Hide(); 
         }
 
-        private void Help_Button_Click(object sender, EventArgs e)
+        private void Help_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Правила"
         {
-            Form ifrm = new Help(); // создаем форму Game, необходимо для того, чтобы её отобразить
-            ifrm.Show();  // показываем форму Game
+            Form ifrm = new Help();
+            ifrm.Show(); 
         }
     }
 }

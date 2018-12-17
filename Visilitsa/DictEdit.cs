@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -13,31 +6,31 @@ namespace Visilitsa
 {
     public partial class DictEdit : Form
     {
-        string selected = ""; //переменная в которой выбранное слово хранится
+        string selected = ""; //переменная, в которой выбранное слово хранится
         public DictEdit()
         {
             InitializeComponent();
         }
 
-        private void Start_Button_Click(object sender, EventArgs e)
+        private void Start_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Начать игру"
         {
             Form ifrm = new Game();
             ifrm.Show();
             this.Hide();
         }
 
-        private void Help_Button_Click(object sender, EventArgs e)
+        private void Help_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Правила"
         {
             Form ifrm = new Help();
             ifrm.Show();
             this.Hide();
         }
 
-        private void DictEdit_Load(object sender, EventArgs e) // обработка загрузки формы , то есть когда форма открывается только
+        private void DictEdit_Load(object sender, EventArgs e) // обработчик загрузки формы
         {
-            try  // делаем попытку открыть файл для чтения словаря, если невозможно (то есть файла нет или он сразу пуст, то создаем файл в блоке catch
+            try 
             {
-                StreamReader sr = new StreamReader("Dictionary.txt");
+                StreamReader sr = new StreamReader("Dictionary.txt"); // чтение файла и вывод слов на экран
                 while (!sr.EndOfStream)
                 {
                     Word_List.Items.Add(sr.ReadLine());
@@ -46,17 +39,17 @@ namespace Visilitsa
             }
             catch
             {
-                StreamWriter sw = new StreamWriter("Dictionary.txt", false); // если файла не было, то создается пустой файл с названием Dictionary, а в него через редактор сохраняются слова
+                StreamWriter sw = new StreamWriter("Dictionary.txt", false); // создание файла, если отсутствовал
                 sw.Close();
             }
         }
 
-        private void DictEdit_Closed(object sender, FormClosedEventArgs e) // момент закрытия формы. Логика такая: при  переходе в редактор слова из файла загружаются в listbox на экране
-        {                                                                   //далее ты добавляешь и удаляешь слова именно из коллекции в listbox, файл пока не меняется
-            try // все действия с файлами желательно оборачивать в try / catch
+        private void DictEdit_Closed(object sender, FormClosedEventArgs e) // обработчик закрытия формы и сохранение словаря в файл
+        {                                                                   
+            try 
             {
-                StreamWriter sw = new StreamWriter("Dictionary.txt", false);    // а когда ты закрываешь редактор - все что было в listbox сохраняется в файл, false означает, что файл не дозаписывается, а перезаписывается в любом случае
-                for (int i = 0; i < Word_List.Items.Count; i++) // то есть по количеству элементов в листбокс каждый элемент сохраняется в строчку в файле
+                StreamWriter sw = new StreamWriter("Dictionary.txt", false);    
+                for (int i = 0; i < Word_List.Items.Count; i++)
                 {
                     sw.WriteLine(Word_List.Items[i]);
                 }
@@ -70,35 +63,35 @@ namespace Visilitsa
             }
         }
 
-        private void Add_Button_Click(object sender, EventArgs e)
+        private void Add_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Добавить"
         {
-            OK_button.Visible = true; // отображаем на форме текстовое поле и кнопку ок
+            OK_button.Visible = true; 
             Add_TextBox.Visible = true;
         }
 
-        private void Del_Button_Click(object sender, EventArgs e)
+        private void Del_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Удалить"
         {
             try
             {
-                Word_List.Items.Remove(selected); //удаляем выбранное слово
+                Word_List.Items.Remove(selected); 
             }
             catch
             {
-                 // ничего не делаем, если такого слова нет или не было выбрано ничего из listbox
+                 
             }
         }
 
-        private void OK_Button_Click(object sender, EventArgs e)
+        private void OK_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "ОК" и добавление слова в коллекцию ListBox
         {
-            Word_List.Items.Add(Add_TextBox.Text.ToUpper()); // добавляем то, что было введено в коллекцию листбокса . обязательно делаем ToUpper, это приводит к верхнему РЕГИСТРУ
-            Add_TextBox.Text = ""; // очищаем поле ввода
-            OK_button.Visible = false; // скрываем кнопку и поле ввода для красоты
+            Word_List.Items.Add(Add_TextBox.Text.ToUpper()); 
+            Add_TextBox.Text = ""; 
+            OK_button.Visible = false; 
             Add_TextBox.Visible = false;
         }
 
-        private void Word_List_Select(object sender, EventArgs e)
+        private void Word_List_Select(object sender, EventArgs e)  // обработчик выбора слова в ListBox
         {
-            selected = Word_List.SelectedItem.ToString(); // когда выделяешь что то в листбокс - оно сохраняется в переменную селектед
+            selected = Word_List.SelectedItem.ToString(); 
         }
     }
 }

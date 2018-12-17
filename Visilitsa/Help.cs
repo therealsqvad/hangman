@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Visilitsa
 {
@@ -18,11 +10,11 @@ namespace Visilitsa
             InitializeComponent();
         }
 
-        private void Start_Button_Click(object sender, EventArgs e)
+        private void Start_Button_Click(object sender, EventArgs e) // обработчик нажатия кнопки "Начать игру"
         {
-            Form ifrm = new Game(); // создаем форму Game, необходимо для того, чтобы её отобразить
-            ifrm.Show();  // показываем форму Game
-            this.Hide(); // скрываем текущую, чтобы не получилось 2 окна
+            Form ifrm = new Game(); 
+            ifrm.Show(); 
+            this.Hide();
         }
     }
 }
