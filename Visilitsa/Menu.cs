@@ -31,16 +31,16 @@ namespace Visilitsa
             ifrm.Show();
         }
 
-        private void DictEdit_Button(object sender, EventArgs e)
+        private void Menu_Closed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void DictEdit_Button_Click(object sender, EventArgs e)
         {
             Form ifrm = new DictEdit();
             ifrm.Show();
             this.Hide();
-        }
-
-        private void Menu_Closed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Visilitsa.DictEdit">
+    <Position X="5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACIABAACAAAIAAAUiIgAACEQAJAQAAAAAAAgAAAAA=</HashCode>
+      <FileName>DictEdit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Visilitsa.Game">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACABAAAAAAmAhASCACEBCAAAAAACCCAAAgY=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Visilitsa.Help">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAQAAACAAAAAAAACAgAACAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Help.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Visilitsa.Menu">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAACAAAAAAAACIgAACAAABAAAAAAAIAQAAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

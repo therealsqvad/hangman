@@ -32,7 +32,7 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.new_game_button = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
-            this.Menu_button = new System.Windows.Forms.Button();
+            this.menu_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,18 +83,18 @@
             this.help_button.UseVisualStyleBackColor = false;
             this.help_button.Click += new System.EventHandler(this.Help_Button_Click);
             // 
-            // Menu_button
+            // menu_button
             // 
-            this.Menu_button.BackColor = System.Drawing.Color.Transparent;
-            this.Menu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Menu_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Menu_button.Location = new System.Drawing.Point(37, 347);
-            this.Menu_button.Name = "Menu_button";
-            this.Menu_button.Size = new System.Drawing.Size(114, 43);
-            this.Menu_button.TabIndex = 4;
-            this.Menu_button.Text = "Меню";
-            this.Menu_button.UseVisualStyleBackColor = false;
-            this.Menu_button.Click += new System.EventHandler(this.Menu_Button_Click);
+            this.menu_button.BackColor = System.Drawing.Color.Transparent;
+            this.menu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menu_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menu_button.Location = new System.Drawing.Point(37, 347);
+            this.menu_button.Name = "menu_button";
+            this.menu_button.Size = new System.Drawing.Size(114, 43);
+            this.menu_button.TabIndex = 4;
+            this.menu_button.Text = "Меню";
+            this.menu_button.UseVisualStyleBackColor = false;
+            this.menu_button.Click += new System.EventHandler(this.Menu_Button_Click);
             // 
             // Game
             // 
@@ -103,7 +103,7 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 428);
-            this.Controls.Add(this.Menu_button);
+            this.Controls.Add(this.menu_button);
             this.Controls.Add(this.help_button);
             this.Controls.Add(this.new_game_button);
             this.Controls.Add(this.pictureBox);
@@ -126,7 +126,7 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button new_game_button;
         private System.Windows.Forms.Button help_button;
-        private System.Windows.Forms.Button Menu_button;
+        private System.Windows.Forms.Button menu_button;
     }
 }
 

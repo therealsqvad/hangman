@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="rules_label.Text" xml:space="preserve">
     <value>Цель игры - спасти от повешения нарисованного человечка. 
 Для этого Вам необходимо по буквам угадывать слово. Если Вы называете букву, которая есть в слове, то она появляется в соответствующем месте в слове. Если Вы называете букву,
 которой нет в слове, то рисуется элемент виселицы. Если Вы не угадали слово до того, как все элементы виселицы нарисованы, то Вы проиграли (и человечка повесили).

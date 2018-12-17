@@ -29,44 +29,44 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.title_label = new System.Windows.Forms.Label();
+            this.logo_pictureBox = new System.Windows.Forms.PictureBox();
+            this.rules_label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // title_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(34, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Правила";
+            this.title_label.AutoSize = true;
+            this.title_label.BackColor = System.Drawing.Color.Transparent;
+            this.title_label.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.title_label.Location = new System.Drawing.Point(34, 3);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(159, 48);
+            this.title_label.TabIndex = 0;
+            this.title_label.Text = "Правила";
             // 
-            // pictureBox1
+            // logo_pictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Visilitsa.Properties.Resources.start;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(500, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(325, 363);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.logo_pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.logo_pictureBox.BackgroundImage = global::Visilitsa.Properties.Resources.start;
+            this.logo_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.logo_pictureBox.Location = new System.Drawing.Point(500, 53);
+            this.logo_pictureBox.Name = "logo_pictureBox";
+            this.logo_pictureBox.Size = new System.Drawing.Size(325, 363);
+            this.logo_pictureBox.TabIndex = 1;
+            this.logo_pictureBox.TabStop = false;
             // 
-            // label2
+            // rules_label
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(482, 397);
-            this.label2.TabIndex = 3;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.rules_label.BackColor = System.Drawing.Color.Transparent;
+            this.rules_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rules_label.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rules_label.Location = new System.Drawing.Point(12, 56);
+            this.rules_label.Name = "rules_label";
+            this.rules_label.Size = new System.Drawing.Size(482, 397);
+            this.rules_label.TabIndex = 3;
+            this.rules_label.Text = resources.GetString("rules_label.Text");
             // 
             // Help
             // 
@@ -75,14 +75,14 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 461);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rules_label);
+            this.Controls.Add(this.logo_pictureBox);
+            this.Controls.Add(this.title_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label title_label;
+        private System.Windows.Forms.PictureBox logo_pictureBox;
+        private System.Windows.Forms.Label rules_label;
     }
 }
 

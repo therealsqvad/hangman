@@ -138,11 +138,22 @@ namespace Visilitsa
             letter_btn.Enabled = false; // "выключаем" нажатую кнопку, чтобы не нажимать её повторно
         }
 
+        private int Count_Words() // функция подсчета слов в файле
+        {
+            int count = 0;
+            StreamReader sr = new StreamReader("Dictionary.txt"); // ну это стандартное открытие файла в си#
+            while (!sr.EndOfStream) 
+                {
+                    sr.ReadLine(); 
+                }
+                sr.Close(); 
+            return count;
+        }
         private void New_Game_Button_Click(object sender, EventArgs e) // обработчик кнопки новая игра
         {
             pictureBox.BackgroundImage = Properties.Resources.start; // выводим лого , ну просто так
             Random rnd = new Random(); // создаем генератор 
-            int value = rnd.Next(0, 45); // генерируем случайное число от 0 до 45, это количество слов в словаре. если будет время и придумаю как оптимально сделать - сделаю автоматические расчет
+            int value = rnd.Next(0, Count_Words()); // генерируем случайное число от 0 до количества строк в файле, это количество слов в словаре.
             try // вот тут уже начинается интересное: try - это блок попытка, то есть программа попытается выполнить все это, но если например файла нет , или сгенерированное число больше 
             {       // количества строк, то выбрасываем исключение
                 StreamReader sr = new StreamReader("Dictionary.txt"); // ну это стандартное открытие файла в си#
