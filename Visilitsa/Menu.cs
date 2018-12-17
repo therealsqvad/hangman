@@ -29,7 +29,6 @@ namespace Visilitsa
         {
             Form ifrm = new Help();
             ifrm.Show();
-            this.Hide();
         }
 
         private void DictEdit_Button(object sender, EventArgs e)

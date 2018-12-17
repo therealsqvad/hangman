@@ -31,6 +31,8 @@
             this.label_for_word = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.new_game_button = new System.Windows.Forms.Button();
+            this.help_button = new System.Windows.Forms.Button();
+            this.Menu_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,13 +62,39 @@
             this.new_game_button.BackColor = System.Drawing.Color.Transparent;
             this.new_game_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.new_game_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.new_game_button.Location = new System.Drawing.Point(289, 347);
+            this.new_game_button.Location = new System.Drawing.Point(277, 347);
             this.new_game_button.Name = "new_game_button";
             this.new_game_button.Size = new System.Drawing.Size(177, 43);
             this.new_game_button.TabIndex = 2;
             this.new_game_button.Text = "Новая игра";
             this.new_game_button.UseVisualStyleBackColor = false;
             this.new_game_button.Click += new System.EventHandler(this.New_Game_Button_Click);
+            // 
+            // help_button
+            // 
+            this.help_button.BackColor = System.Drawing.Color.Transparent;
+            this.help_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.help_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.help_button.Location = new System.Drawing.Point(157, 347);
+            this.help_button.Name = "help_button";
+            this.help_button.Size = new System.Drawing.Size(114, 43);
+            this.help_button.TabIndex = 3;
+            this.help_button.Text = "Правила";
+            this.help_button.UseVisualStyleBackColor = false;
+            this.help_button.Click += new System.EventHandler(this.Help_Button_Click);
+            // 
+            // Menu_button
+            // 
+            this.Menu_button.BackColor = System.Drawing.Color.Transparent;
+            this.Menu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Menu_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Menu_button.Location = new System.Drawing.Point(37, 347);
+            this.Menu_button.Name = "Menu_button";
+            this.Menu_button.Size = new System.Drawing.Size(114, 43);
+            this.Menu_button.TabIndex = 4;
+            this.Menu_button.Text = "Меню";
+            this.Menu_button.UseVisualStyleBackColor = false;
+            this.Menu_button.Click += new System.EventHandler(this.Menu_Button_Click);
             // 
             // Game
             // 
@@ -75,6 +103,8 @@
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 428);
+            this.Controls.Add(this.Menu_button);
+            this.Controls.Add(this.help_button);
             this.Controls.Add(this.new_game_button);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label_for_word);
@@ -95,6 +125,8 @@
         private System.Windows.Forms.Label label_for_word;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button new_game_button;
+        private System.Windows.Forms.Button help_button;
+        private System.Windows.Forms.Button Menu_button;
     }
 }
 

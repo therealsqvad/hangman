@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.start_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,19 +57,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // start_button
-            // 
-            this.start_button.BackColor = System.Drawing.Color.Transparent;
-            this.start_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.start_button.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.start_button.Location = new System.Drawing.Point(388, 445);
-            this.start_button.Name = "start_button";
-            this.start_button.Size = new System.Drawing.Size(177, 43);
-            this.start_button.TabIndex = 2;
-            this.start_button.Text = "Начать игру";
-            this.start_button.UseVisualStyleBackColor = false;
-            this.start_button.Click += new System.EventHandler(this.Start_Button_Click);
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
@@ -88,8 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Visilitsa.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(837, 499);
-            this.Controls.Add(this.start_button);
+            this.ClientSize = new System.Drawing.Size(837, 461);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -97,7 +82,6 @@
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Help_Closed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -108,7 +92,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button start_button;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -18,12 +18,6 @@ namespace Visilitsa
             InitializeComponent();
         }
 
-        private void Help_Closed(object sender, FormClosedEventArgs e) // событие закрытия формы, то есть если ты нажмешь крестик в правилах, то откроется меню
-        {
-            Form ifrm = new Menu();
-            ifrm.Show();
-        }
-
         private void Start_Button_Click(object sender, EventArgs e)
         {
             Form ifrm = new Game(); // создаем форму Game, необходимо для того, чтобы её отобразить
