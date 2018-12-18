@@ -109,6 +109,7 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label_for_word);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виселица";

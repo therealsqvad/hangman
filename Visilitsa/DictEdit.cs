@@ -14,6 +14,7 @@ namespace Visilitsa
 
         private void Start_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Начать игру"
         {
+            Save_Dictionary();
             Form ifrm = new Game();
             ifrm.Show();
             this.Hide();
@@ -44,23 +45,29 @@ namespace Visilitsa
             }
         }
 
-        private void DictEdit_Closed(object sender, FormClosedEventArgs e) // обработчик закрытия формы и сохранение словаря в файл
-        {                                                                   
-            try 
+        private void Save_Dictionary()
+        {
+            try
             {
-                StreamWriter sw = new StreamWriter("Dictionary.txt", false);    
+                StreamWriter sw = new StreamWriter("Dictionary.txt", false);
                 for (int i = 0; i < Word_List.Items.Count; i++)
                 {
                     sw.WriteLine(Word_List.Items[i]);
                 }
                 sw.Close();
-                Form ifrm = new Menu();
-                ifrm.Show();
+
             }
             catch
             {
                 MessageBox.Show("Ошибка при сохранении файла");
             }
+        }
+
+        private void DictEdit_Closed(object sender, FormClosedEventArgs e) // обработчик закрытия формы и сохранение словаря в файл
+        {
+            Save_Dictionary();
+            Form ifrm = new Menu();
+            ifrm.Show();
         }
 
         private void Add_Button_Click(object sender, EventArgs e)  // обработчик нажатия кнопки "Добавить"

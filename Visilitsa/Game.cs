@@ -139,7 +139,8 @@ namespace Visilitsa
             StreamReader sr = new StreamReader("Dictionary.txt");
             while (!sr.EndOfStream) 
                 {
-                    sr.ReadLine(); 
+                    sr.ReadLine();
+                count++;
                 }
                 sr.Close(); 
             return count;
